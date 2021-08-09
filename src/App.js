@@ -33,9 +33,9 @@ function InputWrapper({ label, Input }) {
   );
 }
 
-function Select ({ children, onClick, name }) {
+function Select ({ children, onChange, name }) {
   return (
-    <select className="select" name={name} onClick={onClick}>
+    <select className="select" name={name} onChange={onChange}>
       {children}
     </select>
   );
@@ -120,7 +120,7 @@ function App() {
           Input={
             <Select
               name="city"
-              onClick={selectCity}
+              onChange={selectCity}
             >
               <option>Selecione a cidade</option>
               {cities.map((city) =>(
@@ -135,7 +135,7 @@ function App() {
           Input={
             <Select
               name="plant"
-              onClick={selectPlant}
+              onChange={selectPlant}
             >
               <option>Selecione a planta</option>
               {plants.map((plant) =>(
@@ -158,8 +158,8 @@ function App() {
         />
 
         <div>
-          <input type="checkbox" id="horns" name="horns" ref={checkboxRef} onClick={handleCheckboxClick}/>
-          <label className="label-checkbox" htmlFor="horns">Entrega será realizada fora do horário comercial, final de semana ou feriado?</label>
+          <input className="checkbox" type="checkbox" id="extra-charge" name="extra-charge" ref={checkboxRef} onClick={handleCheckboxClick}/>
+          <label className="label-checkbox" htmlFor="extra-charge">Entrega será realizada fora do horário comercial, final de semana ou feriado?</label>
         </div>
 
         <button className="button" onClick={calculateFreight}>Calcular</button>
