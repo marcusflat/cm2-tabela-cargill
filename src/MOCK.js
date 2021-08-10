@@ -250,4 +250,4 @@ const ADVALOREM = 0.15;
 
 export const GRIS_ADVALOREM = GRIS + ADVALOREM;
 
-export const TAX = 17.93;
+export const TAX = 12;
