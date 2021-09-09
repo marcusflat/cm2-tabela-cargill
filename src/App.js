@@ -105,6 +105,13 @@ function App() {
     setTaxValue(freightValueWithTax * (tax / 100));
   }
 
+  const cleanForm = () => {
+    setSelectedCity('');
+    setSelectedPlant('');
+    setInvoiceValue(0);
+    setFreightValueToZero();
+  }
+
   return (
     <div className="app">
       <div className="wrapper">
@@ -116,7 +123,7 @@ function App() {
             insuranceValue={insuranceValue}
             taxValue={taxValue}
             selectedPlant={selectedPlant}
-            onButtonClick={() => setTotalFreightValue(0)}
+            onButtonClick={cleanForm}
           />
         ): (
           <Form
@@ -228,7 +235,8 @@ function FreightDescription({ totalFreightValue, selectedPlant, insuranceValue, 
       <div className="freight-description-box">
         <p className="text text--dark">Planta (destino):</p>
         <div className="card">
-          <p className="text text--dark">{selectedPlant?.name} - {selectedPlant?.street} - {selectedPlant?.city} - {selectedPlant?.state}</p>
+          <p className="text text--dark">{selectedPlant?.name}</p>
+        <small className="text--dark address">{selectedPlant?.street} - {selectedPlant?.city} - {selectedPlant?.state}</small>
         </div>
         <p className="text text--dark">Prazo de Entrega:</p>
         <div className="card">

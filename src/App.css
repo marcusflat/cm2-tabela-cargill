@@ -205,6 +205,12 @@ input[type="checkbox"] {
   margin-bottom: 6px;
 }
 
+.address {
+  font-size: 10px;
+  margin-top: -3px;
+  display: block;
+}
+
 .app {
   background-position: 0 0,50% 100%;
   background-size: auto,cover;
