@@ -1,0 +1,1 @@
+export const inlayTax = (value, tax) => value / (1 - (tax / 100));
